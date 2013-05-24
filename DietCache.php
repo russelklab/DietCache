@@ -85,8 +85,8 @@ class DietCache
      * @param $value
      * @return bool
      */
-    public function set($key, $value)
+    public function set($key, $value, $expire = null)
     {
-        return $this->memcached->set($key, $value);
+        return $this->memcached->set($key, $value, $expire);
     }
 }
