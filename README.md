@@ -4,7 +4,6 @@
 
 <pre>
 <code>
-<?php
         // prepare an array of servers
         // with keys host and port
         $servers = array(
@@ -17,14 +16,13 @@
         $cache->add('test1', 'test1');
 
         // or use set same as add
-        $cache->set('test1', 'test1');
+        $cache->set('test1', 'test1', time() + 300);
 
         // retrieve a key
         $cache->get('test1');
 
         // delete a key
         $cache->delete('test1');
-
 </code>
 </pre>
 
