@@ -32,5 +32,10 @@ class DietCacheTest extends PHPUnit_Framework_TestCase
         $test3 = $cache->get('test1');
         $this->assertFalse($test3);
 
+
+        // cache set functions
+        $cache->set('test1', 'test_update');
+        $test4 = $cache->get('test1');
+        $this->assertEquals($test4, 'test_update');
     }
 }

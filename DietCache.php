@@ -33,7 +33,7 @@ class DietCache
     }
 
     /**
-     * @return Memcached|null The memcache initiated class
+     * @return Memcached|null The memcached initiated class
      */
     public function getCache()
     {
@@ -75,5 +75,18 @@ class DietCache
     public function delete($key)
     {
         return $this->memcached->delete($key);
+    }
+
+    /**
+     * Update a key in stored in cache if it already exists
+     * or create a new key value pair if otherwise
+     *
+     * @param $key
+     * @param $value
+     * @return bool
+     */
+    public function set($key, $value)
+    {
+        return $this->memcached->set($key, $value);
     }
 }
